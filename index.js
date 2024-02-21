@@ -7,6 +7,10 @@ const categoriesRouter = require("./routes/Categories");
 const brandsRouter = require("./routes/Brands");
 const cors = require("cors"); // without cors ek server se dusre server pe call nahi kr skte
 
+const run = require("./model/config");
+
+run().catch(console.dir);
+
 //middlewares
 
 server.use(
@@ -19,7 +23,7 @@ server.use("/products", productsRouter.router);
 server.use("/categories", categoriesRouter.router);
 server.use("/brands", brandsRouter.router);
 
-main().catch((err) => console.log(err));
+// main().catch((err) => console.log(err));
 
 async function main() {
   await mongoose.connect("mongodb://127.0.0.1:27017/ecommerce");
