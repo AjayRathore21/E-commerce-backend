@@ -10,14 +10,14 @@ const usersRouter = require("./routes/Users");
 const authRouter = require("./routes/Auth");
 const cartRouter = require("./routes/Cart");
 const ordersRouter = require("./routes/Order");
-require("dotenv").config();
+// require("dotenv").config();
 const cors = require("cors"); // without cors ek server se dusre server pe call nahi kr skte
 
-const run = require("./model/config");
+// const run = require("./model/config");
 
-const mongoURI = process.env.MONGODB_URI;
+// const mongoURI = process.env.MONGODB_URI;
 
-run().catch(console.dir);
+// run().catch(console.dir);
 
 //middlewares
 
@@ -38,7 +38,7 @@ server.use("/orders", ordersRouter.router);
 main().catch((err) => console.log(err));
 
 async function main() {
-  await mongoose.connect(mongoURI);
+  await mongoose.connect("mongodb://127.0.0.1:27017/ecommerce");
   console.log("database connected");
 }
 

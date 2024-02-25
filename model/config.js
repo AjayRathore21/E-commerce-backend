@@ -1,5 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-require("dotenv").config();
+// require("dotenv").config();
 
 const url = process.env.MONGODB_URI;
 
@@ -26,6 +26,6 @@ async function run() {
     await client.close();
   }
 }
-// run().catch(console.dir);
+run().catch(console.dir);
 
 module.exports = run;
