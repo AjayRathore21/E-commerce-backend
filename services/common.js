@@ -24,14 +24,12 @@ exports.cookieExtractor = function (req) {
   if (req && req.cookies) {
     token = req.cookies["jwt"];
   }
-  //TODO : this is temporary token for testing without cookie
-  // token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0NWJmNzViOWI3OWFkMTNiMTUxNWQ0MCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjgzNzQ4ODY3fQ.DyMEFgayuvUGrzvPHIxmCJWi4xstvp4hR-dRSBjRNhE"
   return token;
 };
 
 exports.sendMail = async function ({ to, subject, text, html }) {
   let info = await transporter.sendMail({
-    from: '"E-commerce" <ajaykuma420.ak79@gmail.com>', // sender address
+    from: '"E-commerce" <ajaykumar420.ak79@gmail.com>', // sender address
     to,
     subject,
     text,
