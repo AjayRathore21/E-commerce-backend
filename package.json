@@ -25,6 +25,7 @@
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
-    "passport-session": "^1.0.2"
+    "passport-session": "^1.0.2",
+    "stripe": "^14.18.0"
   }
 }
