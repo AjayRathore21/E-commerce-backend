@@ -1,4 +1,4 @@
-const { Brand } = require("../model/Brand");
+const { Brand } = require('../model/Brand');
 
 exports.fetchBrands = async (req, res) => {
   try {
@@ -10,8 +10,6 @@ exports.fetchBrands = async (req, res) => {
 };
 
 exports.createBrand = async (req, res) => {
-
-  // console.log('inside createbrand');
   const brand = new Brand(req.body);
   try {
     const doc = await brand.save();
