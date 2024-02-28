@@ -114,10 +114,10 @@ passport.use(
     done
   ) {
     // by default passport uses username
-    console.log({ email, password });
+    // console.log({ email, password });
     try {
       const user = await User.findOne({ email: email });
-      console.log(email, password, user);
+      // console.log(email, password, user);
       if (!user) {
         return done(null, false, { message: "invalid credentials" }); // for safety
       }
@@ -147,7 +147,7 @@ passport.use(
 passport.use(
   "jwt",
   new JwtStrategy(opts, async function (jwt_payload, done) {
-    console.log({ jwt_payload });
+    // console.log({ jwt_payload });
     try {
       const user = await User.findById(jwt_payload.id);
       if (user) {
@@ -163,7 +163,7 @@ passport.use(
 
 // this creates session variable req.user on being called from callbacks
 passport.serializeUser(function (user, cb) {
-  console.log("serialize", user);
+  // console.log("serialize", user);
   process.nextTick(function () {
     return cb(null, { id: user.id, role: user.role });
   });
@@ -172,7 +172,7 @@ passport.serializeUser(function (user, cb) {
 // this changes session variable req.user when called from authorized request
 
 passport.deserializeUser(function (user, cb) {
-  console.log("de-serialize", user);
+  // console.log("de-serialize", user);
   process.nextTick(function () {
     return cb(null, user);
   });
